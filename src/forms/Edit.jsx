@@ -1,4 +1,4 @@
-import React, {useState, useEffect} from 'react';
+import React, { useState, useEffect } from 'react';
 
 const Edit = (props) => {
 
@@ -9,9 +9,9 @@ const Edit = (props) => {
     const [result, setResult] = useState(props.currentResult);
 
     const handleChange = e => {
-        const {name, value} = e.target;
-        setResult({...result, [name]: value});
-        }
+        const { name, value } = e.target;
+        setResult({ ...result, [name]: value });
+    }
 
     const handleSubmit = e => {
         e.preventDefault();
@@ -20,10 +20,10 @@ const Edit = (props) => {
 
     return (
         <form>
-            <label>Text</label>
+            <label>Title</label>
             <input className="u-full-width" type="text" value={result.name} name="name" onChange={handleChange} />
-            
-            <button className="button-primary" type="submit" onClick={handleSubmit} >Edit result</button>
+
+            <button className="button-primary" type="submit" onClick={handleSubmit} >OK</button>
             <button type="submit" onClick={() => props.setEditing(false)} >Cancel</button>
         </form>
     )
